@@ -192,7 +192,7 @@
         <form method="post" action="">
             <div class="formpage">
                 <div class="form_div">
-                    <input type="text" name="name" onkeyup="valname(this)" placeholder="Full Name" required>
+                    <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email Address">
                 </div>
                 <div class="form_div">
@@ -272,7 +272,7 @@
         const message = form.querySelector('[name="message"]').value;
 
         if (!name.match(/^[a-zA-Z\s]+$/)) {
-            alert('Please enter a valid name (at least 2 characters).');
+            alert('Please enter a valid name.');
             return;
         }
 
@@ -286,8 +286,6 @@
             return;
 
         }
-
-        // luv@gam.com
         const mailtoUrl = `mailto:luvjadaun786.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nNumber: ${number}\nMessage: ${message}`)}`;
         window.location.href = mailtoUrl;
 
