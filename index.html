@@ -42,7 +42,7 @@
                         <h1>Lj Laijyour</h1>
                         <h3>And I'm a <span id="dynamic"></span></h3>
                     </div>
-                    <p> As a YouTuber and Developer  or video creator, I can use my creativity and personality to
+                    <p> As a YouTuber and Developer or video creator, I can use my creativity and personality to
                         connect with audience and share my passion for technology. I can create videos that
                         showcase my opinions on the latest tech trends, review software and hardware products, or
                         share my experiences attending conferences and events.</p>
@@ -56,7 +56,7 @@
                     <a href="https://github.com/LuvThakur/" target="_blank"> <i class='bx bxl-github'></i></a>
                 </div>
 
-                <a class="gap" href="#" id="button"> Download CV</a>
+                <a class="gap" href="#" id="button" onclick="Cvdownload()"> Download CV</a>
 
             </div>
         </div>
@@ -223,6 +223,24 @@
 <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
 
 <script>
+
+    // download resume
+    const Cvdownload = async () => {
+        const pdfUrl = "https://drive.google.com/file/d/1E-zqI2He_eFJVh3iPkZEHobia5cMXm8T/view?usp=sharing";
+        const response = await fetch(pdfUrl); // fetch an image/pdf url
+        const pdfBlob = await response.blob(); // create an blob
+
+
+        const link = document.createElement('a');// create dynnamic a tag toa ssign link
+        link.href = URL.createObjectURL(pdfBlob);// assignb temprary url from blob 
+        link.download = 'CV.pdf';
+
+        link.click();
+
+        URL.revokeObjectURL(link.href);// remove temprary url
+
+    }
+
     //  type .js 
     const type = new Typed('#dynamic',
         {
