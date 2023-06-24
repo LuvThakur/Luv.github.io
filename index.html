@@ -224,22 +224,6 @@
 
 <script>
 
-    // download resume
-    const Cvdownload = async () => {
-        const pdfUrl = "https://drive.google.com/file/d/1E-zqI2He_eFJVh3iPkZEHobia5cMXm8T/view?usp=sharing";
-        const response = await fetch(pdfUrl); // fetch an image/pdf url
-        const pdfBlob = await response.blob(); // create an blob
-
-
-        const link = document.createElement('a');// create dynnamic a tag toa ssign link
-        link.href = URL.createObjectURL(pdfBlob);// assignb temprary url from blob 
-        link.download = 'CV.pdf';
-
-        link.click();
-
-        URL.revokeObjectURL(link.href);// remove temprary url
-
-    }
 
     //  type .js 
     const type = new Typed('#dynamic',
